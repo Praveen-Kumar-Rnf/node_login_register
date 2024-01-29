@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*Login Start*/
+.login-auth {
+    border: 1px solid #ddd;
+    margin-top: 10%;
+    width: 500px !important;
+    padding: 30px;
+}
+/*Login End*/
+
+/*Register Start*/
+.register-auth{
+    border: 1px solid #ddd;
+    margin-top: 10%;
+    width: 700px !important;
+    padding: 0px 30px 30px 30px !important;
+}
+/*Register End*/
