@@ -1,6 +1,6 @@
 const express = require('express');
 const path = require('path');
-const bcrypt = require('bcrypt');
+const bcrypt = require ('bcrypt');
 const collection = require('./config');
 
 
@@ -17,10 +17,14 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(express.static('node_modules'));
 
+app.get('/', (req,res) => {
+    res.render("home");
+});
 
 app.get('/login', (req,res) => {
     res.render("auth/login");
 });
+
 
 app.get('/register', (req,res) => {
     res.render("auth/register");
@@ -42,7 +46,7 @@ app.post("/register", async (req, res) =>{
     const existingUser = await collection.findOne({email: data.email});
 
     if(existingUser) {
-        res.send("You already registed with this email use another email.")
+        res.send("You already registed with this email use another email.");
     } else {
         //hash the pasword using bcrypt
         const saltRounds = 10; //Number of salt round for bcrypt
